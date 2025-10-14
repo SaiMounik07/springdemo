@@ -29,7 +29,12 @@ public class DemoController {
     public Product updateProduct(@PathVariable int id, @RequestBody Product product){
         return  productService.updateProduct(id, product);
     }
-
-
-
+    @DeleteMapping("/deleteProduct/{id}")
+    public String deleteProduct(@PathVariable int id){
+        return productService.deleteProduct(id);
+    }
+    @GetMapping("/findByName")
+    public List<Product> findByName(@RequestParam String name){
+        return productService.findByName(name);
+    }
 }
