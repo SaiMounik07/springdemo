@@ -1,6 +1,7 @@
 package com.demo.spring.springDemo.repository;
 
 import com.demo.spring.springDemo.model.Product;
+import com.demo.spring.springDemo.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,4 +13,6 @@ public interface ProductRepo extends JpaRepository<Product, Integer> {
     List<Product> findByPrice(Double price);
     List<Product> findByNameAndPrice(String name, Double price);
     List<Product> findByPriceGreaterThan(Double price);
+    List<Product> findByUser_Id(Long userId);
+
 }

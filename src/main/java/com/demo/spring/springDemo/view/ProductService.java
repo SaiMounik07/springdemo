@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    static List<Product> products = new ArrayList<>();
     @Autowired
     ProductRepo productRepo;
 
@@ -48,5 +47,8 @@ public class ProductService {
     public List<Product> findByName(String name) {
         return productRepo.findByName(name);
 
+    }
+    public List<Product> getProductsByUserId(Long userId) {
+        return productRepo.findByUser_Id(userId);
     }
 }
